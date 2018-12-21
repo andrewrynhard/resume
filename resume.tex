@@ -1,0 +1,69 @@
+% !TEX program = xelatex
+
+\documentclass{article}
+\usepackage[
+  left=0.75in,
+  right=0.75in,
+  top=0.5in,
+  bottom=0.5in,
+  % Addresses a warning in the logs.
+  headheight=50pt,
+  includehead,includefoot,heightrounded,
+]{geometry}
+\usepackage{tabu}
+\usepackage{fontawesome}
+\usepackage{fontspec}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{multicol}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+}
+
+\setmainfont[BoldFont=Merlo-Bold]{Merlo-Medium}
+\setlength{\parindent}{0pt}
+
+\newcommand{\pound}{\raisebox{0.5ex}{\tiny\textbf{\#}}}
+\newcommand{\plus}{\raisebox{0.5ex}{\tiny\textbf{+}}}
+\newcommand{\name}{
+  \LARGE\bfseries
+  Andrew Rynhard
+}
+\newcommand{\contact}{
+  \small\bfseries
+  \texttt{+1(408)601-7334} \\
+  \texttt{andrew@rynhard.io} \\
+  \faLinkedin\ \href{https://www.linkedin.com/in/andrew-rynhard-9a814595/}{andrewrynhard}
+  \faGithub\ \href{https://github.com/andrewrynhard}{andrewrynhard}
+}
+
+\pagestyle{empty}
+% Clear the defaults.
+\fancyhf{}
+\fancyhead{}
+\fancyfoot{}
+\lhead{\name\\\contact}
+\renewcommand{\headrulewidth}{1.5pt}
+
+\titleformat*{\section}{\Large\bfseries}
+
+\begin{document}
+% I only want a header on the first page.
+\thispagestyle{fancy}
+% Default text size.
+\large
+\input{summary}
+\noindent\rule[0.25ex]{\linewidth}{0.5pt}
+\input{professional_strengths}
+\noindent\rule[0.25ex]{\linewidth}{0.5pt}
+\input{skills}
+\noindent\rule[0.25ex]{\linewidth}{0.5pt}
+\input{experience}
+\noindent\rule[0.25ex]{\linewidth}{0.5pt}
+\input{education}
+\end{document}
